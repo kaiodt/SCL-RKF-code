@@ -9,72 +9,199 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ======================================================================= %
+% Common parameters
+% ======================================================================= %
+
+% Initial state estimate
+xp0 = zeros(n,1);
+
+% Initial estimation error weighting matrix
+P0 = 1 * eye(n);
+
+% ======================================================================= %
 % Kalman Filter (KF)
 % ======================================================================= %
 
+% ----------------------------------------------------------------------- %
+% Initialization parameters
+% ----------------------------------------------------------------------- %
+
+KF_init_params = struct();
+
+% Initial state estimate
+KF_init_params.xp0 = xp0;
+
 % Initial estimation error weighting matrix
-P0_KF = 1 * eye(n);
+KF_init_params.P0 = P0;
+
+% ----------------------------------------------------------------------- %
+% Filter parameters
+% ----------------------------------------------------------------------- %
+
+KF_params = struct();
 
 % ======================================================================= %
 % Robust Kalman Filter (RKF)
 % ======================================================================= %
 
+% ----------------------------------------------------------------------- %
+% Initialization parameters
+% ----------------------------------------------------------------------- %
+
+RKF_init_params = struct();
+
+% Initial state estimate
+RKF_init_params.xp0 = xp0;
+
 % Initial estimation error weighting matrix
-P0_RKF = 1 * eye(n);
+RKF_init_params.P0 = P0;
+
+% ----------------------------------------------------------------------- %
+% Filter parameters
+% ----------------------------------------------------------------------- %
+
+RKF_params = struct();
 
 % Penalty parameter
-mu_RKF = 1;
+RKF_params.mu = 1;
 
 % ksi parameter (lambda approximation)
-ksi_RKF = 0.1;
+RKF_params.ksi = 0.1;
 
 % ======================================================================= %
 % Optimal Robust Kalman Filter (ORKF)
 % ======================================================================= %
 
+% ----------------------------------------------------------------------- %
+% Initialization parameters
+% ----------------------------------------------------------------------- %
+
+ORKF_init_params = struct();
+
+% Initial state estimate
+ORKF_init_params.xp0 = xp0;
+
+% Initial estimation error weighting matrix
+ORKF_init_params.P0 = P0;
+
+% ----------------------------------------------------------------------- %
+% Filter parameters
+% ----------------------------------------------------------------------- %
+
+ORKF_params = struct();
+
 % Penalty parameter
-mu_ORKF = 1e16;
+ORKF_params.mu = 1e16;
 
 % ksi parameter (lambda approximation)
-ksi_ORKF = 0.1;
+ORKF_params.ksi = 0.1;
 
 % ======================================================================= %
 % Bounded Data Uncertainty Filter (BDU)
 % ======================================================================= %
 
+% ----------------------------------------------------------------------- %
+% Initialization parameters
+% ----------------------------------------------------------------------- %
+
+BDU_init_params = struct();
+
+% Initial state estimate
+BDU_init_params.xp0 = xp0;
+
+% Initial estimation error weighting matrix
+BDU_init_params.P0 = P0;
+
+% ----------------------------------------------------------------------- %
+% Filter parameters
+% ----------------------------------------------------------------------- %
+
+BDU_params = struct();
+
 % ksi parameter (lambda approximation)
-ksi_BDU = 0.5;
+BDU_params.ksi = 0.5;
 
 % ======================================================================= %
 % Guaranteed Cost Filter (GCF)
 % ======================================================================= %
 
-% Epsilon parameters (approximations)
-eps_a = 0.01;
-eps_b = 0.01;
+% ----------------------------------------------------------------------- %
+% Initialization parameters
+% ----------------------------------------------------------------------- %
+
+GCF_init_params = struct();
+
+% Initial state estimate
+GCF_init_params.xp0 = xp0;
+
+% Initial estimation error weighting matrix
+GCF_init_params.P0 = P0;
+
+% ----------------------------------------------------------------------- %
+% Filter parameters
+% ----------------------------------------------------------------------- %
+
+GCF_params = struct();
+
+% epsilon parameters (approximations)
+GCF_params.eps_a = 0.01;
+GCF_params.eps_b = 0.01;
 
 % ======================================================================= %
-% LMI-Based Robust Kalman Filter (LMI-RKF)
+% LMI-Based Robust Kalman Filter (LMI_RKF)
 % ======================================================================= %
+
+% ----------------------------------------------------------------------- %
+% Initialization parameters
+% ----------------------------------------------------------------------- %
+
+LMI_RKF_init_params = struct();
+
+% Initial state estimate
+LMI_RKF_init_params.xp0 = xp0;
+
+% Initial estimation error weighting matrix
+LMI_RKF_init_params.P0 = P0;
+
+% ----------------------------------------------------------------------- %
+% Filter parameters
+% ----------------------------------------------------------------------- %
+
+LMI_RKF_params = struct();
 
 % Penalty parameter
-mu_LMI_RKF = 0.1;
+LMI_RKF_params.mu = 0.1;
 
 % ni parameter (approximations)
-ni_LMI_RKF = 1;
+LMI_RKF_params.ni = 1;
 
 % ======================================================================= %
 % Risk-Sensitive Kalman Filter (RSKF)
 % ======================================================================= %
 
+% ----------------------------------------------------------------------- %
+% Initialization parameters
+% ----------------------------------------------------------------------- %
+
+RSKF_init_params = struct();
+
+% Initial state estimate
+RSKF_init_params.xp0 = xp0;
+
 % Initial least-favorable conditioned variance
-V0_RSKF = 8 * eye(2);
+RSKF_init_params.V0 = 8 * eye(n);
+
+% ----------------------------------------------------------------------- %
+% Filter parameters
+% ----------------------------------------------------------------------- %
+
+RSKF_params = struct();
 
 % tau parameter
-tau_RSKF = 1;
+RSKF_params.tau = 0.1;
 
 % Tolerance parameter
-c_RSKF = 2.9;
+RSKF_params.c = 2.9;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
