@@ -18,9 +18,10 @@ T = 1000;
 
 % Choose which filters to simulate
 % Available filters:
-% KF - Kalman Filter
+% KF  - Kalman Filter
+% RKF - Robust Kalman Filter
 
-sim_filters = ["KF"];
+sim_filters = ["KF", "RKF"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
