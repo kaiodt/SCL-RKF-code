@@ -20,7 +20,7 @@ clear
 close all
 
 % warning("off");
-fprintf("--> Starting...\n");
+fprintf("--> Starting...\n\n");
 
 % ======================================================================= %
 % Set simulation parameters
@@ -47,7 +47,7 @@ fprintf("\n\n");
 
 addpath saved_system_data;
 
-fprintf("--> Loading system data...\n");
+fprintf("--> Loading system data...\n\n");
 
 try
     filename = sprintf("system_data_%d", example);
@@ -93,7 +93,7 @@ end
 
 addpath filter_parameters;
 
-fprintf("--> Setting filter parameters...\n");
+fprintf("--> Setting filter parameters...\n\n");
 
 try
     filename = sprintf("filter_parameters_%d", example);
@@ -137,7 +137,7 @@ for f = 1:n_filters
     end
 end
 
-fprintf("--> Filters ready!\n");
+fprintf("--> Filters ready!\n\n");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                           Simulation Loop                           %%%
@@ -203,7 +203,7 @@ for e = 1:T
 end % Experiments loop
 
 fprintf("\n");
-fprintf("--> Simulation finished!\n");
+fprintf("--> Simulation finished!\n\n");
 
 % ======================================================================= %
 % Stop timer
@@ -219,12 +219,16 @@ toc
 % Compute simulation statistics
 % ======================================================================= %
 
-fprintf("--> Computing statistics...\n");
+fprintf("\n");
+fprintf("--> Computing statistics...\n\n");
 
 % Compute final statistics of each filter
 for f = 1:n_filters
     filters{f}.compute_filter_stats(T,N);
 end
+
+% Display statistics
+display_stats;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
