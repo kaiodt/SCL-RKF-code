@@ -14,7 +14,7 @@ example = 1;
 N = 1000;
 
 % Number of experiments
-T = 1000;
+T = 10;
 
 % Choose which filters to simulate
 % Available filters:
@@ -22,8 +22,9 @@ T = 1000;
 % RKF - Robust Kalman Filter
 % ORF - Optimal Robust Filter (Ishihara, 2015)
 % BDU - Bounded Data Uncertainty Filter (Sayed, 2001)
+% GCF - Guaranteed Cost Filter (Dong, 2006)
 
-sim_filters = ["KF","RKF","ORF","BDU"];
+sim_filters = ["KF","RKF","ORF","BDU","GCF"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
