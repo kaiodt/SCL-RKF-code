@@ -57,7 +57,7 @@ classdef LMI_RKF < Filter
         
         function pre_compute_lmis(f,N,sys_model,init_params,f_params)
 
-            fprintf("* Pre-computing LMI optimization for LMI-RKF...\n");
+            fprintf("* Pre-computing LMI optimization for LMI-RKF...\n\n");
 
             % Start timer
             t_start = tic;
