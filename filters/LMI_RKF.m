@@ -36,7 +36,7 @@ classdef LMI_RKF < Filter
             f@Filter(N,T,n);
 
             % Filter identification
-            f.id = "LMI_RKF (Abolhasani, 2018)";
+            f.id = "LMI-RKF (Abolhasani, 2018)";
 
             % Additional pre-allocations
             f.Phi_opt = zeros(n,n,N+1);
