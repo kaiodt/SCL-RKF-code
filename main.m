@@ -132,6 +132,12 @@ for f = 1:n_filters
 
         f_params_str = sprintf("%s_params", sim_filters(f));
         f_params{f} = eval(f_params_str);
+
+        % Pre-compute LMIs if necessary
+        if strcmp(sim_filters(f), "LMI_RKF")
+            filters{f}.pre_compute_lmis(N,sys_model,...
+                                        f_init_params{f},f_params{f});
+        end
     catch
         error("Filter %s is not implemented!", sim_filters(f));
     end
