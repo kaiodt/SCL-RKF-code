@@ -24,8 +24,9 @@ T = 10;
 % BDU     - Bounded Data Uncertainty Filter (Sayed, 2001)
 % GCF     - Guaranteed Cost Filter (Dong, 2006)
 % LMI_RKF - LMI-Based Robust Kalman Filter (Abolhasani, 2018)
+% RSKF    - Risk-Sensitive Kalman Filter (Zorzi, 2017)
 
-sim_filters = ["KF","RKF","ORF","BDU","GCF","LMI_RKF"];
+sim_filters = ["KF","RKF","ORF","BDU","GCF","LMI_RKF","RSKF"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
