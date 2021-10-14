@@ -20,8 +20,9 @@ T = 1000;
 % Available filters:
 % KF  - Kalman Filter
 % RKF - Robust Kalman Filter
+% ORF - Optimal Robust Filter (Ishihara, 2015)
 
-sim_filters = ["KF", "RKF"];
+sim_filters = ["KF","RKF","ORF"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

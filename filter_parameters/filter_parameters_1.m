@@ -69,32 +69,29 @@ RKF_params.mu = 1;
 RKF_params.ksi = 0.1;
 
 % ======================================================================= %
-% Optimal Robust Kalman Filter (ORKF)
+% Optimal Robust Filter (ORF)
 % ======================================================================= %
 
 % ----------------------------------------------------------------------- %
 % Initialization parameters
 % ----------------------------------------------------------------------- %
 
-ORKF_init_params = struct();
-
-% Initial state estimate
-ORKF_init_params.xp0 = xp0;
+ORF_init_params = struct();
 
 % Initial estimation error weighting matrix
-ORKF_init_params.P0 = P0;
+ORF_init_params.P0 = P0;
 
 % ----------------------------------------------------------------------- %
 % Filter parameters
 % ----------------------------------------------------------------------- %
 
-ORKF_params = struct();
+ORF_params = struct();
 
 % Penalty parameter
-ORKF_params.mu = 1e16;
+ORF_params.mu = 1e13;
 
 % ksi parameter (lambda approximation)
-ORKF_params.ksi = 0.1;
+ORF_params.ksi = 0.1;
 
 % ======================================================================= %
 % Bounded Data Uncertainty Filter (BDU)
