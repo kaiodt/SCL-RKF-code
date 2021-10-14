@@ -21,8 +21,9 @@ T = 1000;
 % KF  - Kalman Filter
 % RKF - Robust Kalman Filter
 % ORF - Optimal Robust Filter (Ishihara, 2015)
+% BDU - Bounded Data Uncertainty Filter (Sayed, 2001)
 
-sim_filters = ["KF","RKF","ORF"];
+sim_filters = ["KF","RKF","ORF","BDU"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
